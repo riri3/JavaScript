@@ -12,13 +12,20 @@
 //
 //= require jquery
 
-//= require jquery_ujs
-//= require activestorage
 //= require turbolinks
 //= require_tree .
 
 var title = "javascriptが使えました";
 alert(title)
+
+$(function() {
+  $('.menu-trigger').on('click', function(event) {
+    $(this).toggleClass('active');
+    $('#sp-menu').fadeToggle();
+    event.preventDefault();
+  });
+});
+
 
 /*global $*/
 $(document).ready(function () {
@@ -26,17 +33,17 @@ $(document).ready(function () {
    $(this).css('color', 'red');
   });
  });
- 
+
  $(document).ready(function () {
   $("#theTarget").skippr({
     // スライドショーの変化 ("fade" or "slide")
     transition : 'slide',
     // 変化に係る時間(ミリ秒)
-    speed : 1000,
+    speed : 2000,
     // easingの種類
     easing : 'easeOutQuart',
     // ナビゲーションの形("block" or "bubble")
-    navType : 'block',
+    navType : 'bubble',
     // 子要素の種類('div' or 'img')
     childrenElementType : 'div',
     // ナビゲーション矢印の表示(trueで表示)
